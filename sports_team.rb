@@ -29,6 +29,7 @@ class Team
       @points += 100
     end
   end
+
 # def get_name
 #   return @name
 # end
