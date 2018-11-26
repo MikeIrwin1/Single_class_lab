@@ -1,14 +1,13 @@
 class Team
 
   attr_reader :name, :players
-  attr_accessor :coach, :points, :status
+  attr_accessor :coach, :points
 
-  def initialize(name, players, coach, points, status)
+  def initialize(name, players, coach)
     @name = name
     @players = players
     @coach = coach
-    @points = points
-    @status = status
+    @points = 0
   end
 
   def add_player(player)
@@ -24,8 +23,8 @@ class Team
     end
   end
 
-  def check_win
-    if @status == "win"
+  def check_win(status)
+    if status == "win"
       @points += 100
     end
   end
