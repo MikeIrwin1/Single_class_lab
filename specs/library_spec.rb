@@ -24,15 +24,24 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_add_book
-    book = {title: "lord_of_the_flies",
+    book = {title: 'trainspotting',
       rental_details: {
-        student_name: "",
-        date: ""
+        student_name: '',
+        date: ''
       }
     }
     library = Library.new()
-    library.add_book('lord_of_the_flies')
-    assert_equal(book,library.book_get('lord_of_the_flies'))
+    library.add_book('trainspotting')
+    assert_equal(book,library.book_get('trainspotting'))
+  end
+
+  def test_change_details
+    rental = {title: 'lord_of_the_rings', rental_details: {student_name: 'Chris', date: '25/12/2018'}}
+    library = Library.new()
+
+    new_rental = library.change_details('lord_of_the_rings', 'Chris', '25/12/2018')
+
+    assert_equal(rental, new_rental)
   end
 
 end
