@@ -32,14 +32,12 @@ class TestLibrary < MiniTest::Test
       }
     }
     added_book = @library.add_book('trainspotting')
-    assert_equal(book, added_book[1])
+    assert_equal(book, added_book.last)
   end
 
   def test_change_details
     rental = {title: 'lord_of_the_rings', rental_details: {student_name: 'Chris', date: '25/12/2018'}}
-
     new_rental = @library.change_details('lord_of_the_rings', 'Chris', '25/12/2018')
-
     assert_equal(rental, new_rental)
   end
 
