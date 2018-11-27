@@ -22,7 +22,7 @@ class Library
     end
   end
 
-  def book_details(name)
+  def book_details(name) # Better to reuse the book_get function to pull the book. You can then return the details from that.
     for book in @books
       if book[:title] == name
         return book[:rental_details]
