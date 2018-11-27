@@ -1,4 +1,4 @@
-class Team
+class SportsTeam
 
   attr_reader :name, :players
   attr_accessor :coach, :points
